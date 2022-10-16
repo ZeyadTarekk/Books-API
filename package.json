@@ -1,0 +1,19 @@
+{
+  "name": "swagger-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZeyadTarekk/Swagger-Testing.git"
+  },
+  "author": "Zeyad Tarek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZeyadTarekk/Swagger-Testing/issues"
+  },
+  "homepage": "https://github.com/ZeyadTarekk/Swagger-Testing#readme"
+}
