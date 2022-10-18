@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
-import {Low, LowSync, JSONFileSync } from "lowdb";
+import { Low, JSONFileSync } from "lowdb";
 
 import booksRouter from "./routes/books.js";
 
@@ -21,7 +21,7 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 
-app.use(booksRouter);
+app.use("/books", booksRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
