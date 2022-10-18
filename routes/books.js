@@ -94,11 +94,6 @@ router.get("/:id", async (req, res) => {
   res.send(book);
 });
 
-// type: object
-//  *     required:
-//  *      - title
-//  *      - author
-//  *     properties:
 
 /**
  * @swagger
@@ -149,6 +144,26 @@ router.post("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+/**
+ * @swagger
+ * /books/{id}:
+ *  delete:
+ *   summary: Delete a book by id
+ *   tags: [Books]
+ *   parameters:
+ *    - in: path
+ *      name: id
+ *      description: The id of the book to delete
+ *      schema:
+ *       type: string
+ *      required: true
+ *   responses:
+ *    200:
+ *     description: The book is successfully deleted
+ *    404:
+ *     description: The book couldn't be found
+ */
 
 router.delete("/:id", async (req, res) => {
   try {
