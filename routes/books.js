@@ -30,6 +30,24 @@ const IDLENGTH = 8;
  *
  */
 
+
+/**
+ * @swagger
+ * /books:
+ *  get:
+ *   summary: Returns the list of all books
+ *   responses:
+ *    200:
+ *     description: The list of the books
+ *     content:
+ *      application/json:
+ *       schema:
+ *        type: array
+ *        items:
+ *         $ref: '#/components/schemas/Book'
+ *
+ */
+
 router.get("/", async (req, res) => {
   await req.app.db.read();
   const books = req.app.db.data.books;
