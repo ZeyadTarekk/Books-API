@@ -94,6 +94,47 @@ router.get("/:id", async (req, res) => {
   res.send(book);
 });
 
+// type: object
+//  *     required:
+//  *      - title
+//  *      - author
+//  *     properties:
+
+/**
+ * @swagger
+ * /books:
+ *  post:
+ *   summary: Create a new book
+ *   tags: [Books]
+ *   requestBody:
+ *    required: true
+ *    content:
+ *     application/json:
+ *      schema:
+ *       required:
+ *        - title
+ *        - author
+ *       type: object
+ *       properties:
+ *        title:
+ *         type: string
+ *         description: the title of the book
+ *        author:
+ *         type: string
+ *         description: the author of the book
+ *       example:
+ *        title: Cool Book
+ *        author: Zeyad Tarek
+ *   responses:
+ *    200:
+ *     description: The book is successfully created
+ *     content:
+ *      application/json:
+ *       $ref: '#/components/schemas/Book'
+ *    500:
+ *     description: The book couldn't be created
+ */
+
 router.post("/", async (req, res) => {
   try {
     const book = {
