@@ -11,8 +11,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  const book = req.app.db.data.books.find({ id: req.params.id });
-
+  const book = req.app.db.data.books.find((el) => el.id === req.params.id);
   res.send(book);
 });
 
