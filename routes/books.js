@@ -33,9 +33,17 @@ const IDLENGTH = 8;
 
 /**
  * @swagger
+ * tags:
+ *  name: Books
+ *  description: The Books management API
+ */
+
+/**
+ * @swagger
  * /books:
  *  get:
  *   summary: Returns the list of all books
+ *   tags: [Books]
  *   responses:
  *    200:
  *     description: The list of the books
