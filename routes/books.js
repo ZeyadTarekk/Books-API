@@ -63,6 +63,31 @@ router.get("/", async (req, res) => {
   res.json(books);
 });
 
+
+/**
+ * @swagger
+ * /books/{id}:
+ *  get:
+ *   summary: Get the book having that id
+ *   tags: [Books]
+ *   parameters:
+ *    - in: path
+ *      name: id
+ *      description: The id of the needed book
+ *      schema:
+ *       type: string
+ *      required: true
+ *   responses:
+ *    200:
+ *     description: The Book by id
+ *     content:
+ *      application/json:
+ *       schema:
+ *        $ref: '#/components/schemas/Book'
+ *    404:
+ *     description: The Book was not found
+ */
+
 router.get("/:id", async (req, res) => {
   await req.app.db.read();
   const book = req.app.db.data.books.find((el) => el.id === req.params.id);
