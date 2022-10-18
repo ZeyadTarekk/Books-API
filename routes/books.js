@@ -10,4 +10,10 @@ router.get("/", (req, res) => {
   res.json(books);
 });
 
+router.get("/:id", (req, res) => {
+  const book = req.app.db.data.books.find({ id: req.params.id });
+
+  res.send(book);
+});
+
 export default router;
