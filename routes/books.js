@@ -15,4 +15,16 @@ router.get("/:id", (req, res) => {
   res.send(book);
 });
 
+router.post("/", (req, res) => {
+  try {
+    const book = {
+      id: nanoid(IDLENGTH),
+      ...req.body,
+    };
+    req.app.db.data.books.push(book);
+    res.json(book);
+  } catch (err) {
+    console.log(err);
+  }
+});
 export default router;
